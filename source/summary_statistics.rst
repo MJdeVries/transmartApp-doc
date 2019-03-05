@@ -2,7 +2,12 @@ Summary Statistics
 ==================
 
 This chapter explains how to quickly review basic statistics about the
-cohorts you use for analyses.
+cohorts you use for analyses. 
+
+In summary: after you have made a subset in the Comparison tab, you can go to the Summary Statistics 
+tab where you can find a quick overview of your data. You can drag data nodes to this tab which will be 
+transformed into boxplots and histograms, including a t-test or chi-squared test. For further advanced 
+analysis, you can go to the Advanced Workflow tab.
 
 .. _generating-summary-statistics-label:
 
@@ -24,43 +29,38 @@ following sections:
 
     For example:
 
-    |image76|
+    |image500|
+	|image501|
 
     A table showing the number of subjects in each subset that match the subset criteria.
 
     For example:
 
-    |image77|
+    |image502|
 
-    In this example, 58 subjects matched the criteria for Subset 1 and
-    63 matched the criteria for Subset 2. No (0) subjects matched the
-    criteria for both subsets.
+    In this example, 56 subjects matched the criteria for Subset 1 and 58 matched the criteria for 
+    Subset 2. No (0) subjects matched the criteria for both subsets.
    
-    Tables and charts that show how the subjects who match the criteria
-    fit into age, sex, and race demographics.
+    Tables and charts that show how the subjects who match the criteria fit into age and sex 
+    demographics.
 
     This example shows the age portion of the demographics data only:
 
-    |image78|
+    |image503|
 
-    Analyses of the concepts you added to the subsets from the navigation
-    tree. The data displayed reflects the data used to generate the
-    summary statistics.
+	The next examples show analysis of concepts for histological type, WHO performance and NGS data
 
-The next examples show analysis of concepts for a non-linked event, a
-linked event, and NGS data.
+    |image505|
 
-    |image79|
+    **Example 1: Histological Type.**: this example shows the analysis of the categorical node 'histological type'
 
-    **Example 1: Non-linked event.**: this example shows the analysis of the chemotherapy concept.
+    |image506|
 
-    |image80|
+    **Example 2: Tumor diameter.**: This example shows the analysis of the numerical node ‘Tumor diameter'
 
-    **Example 2: Linked event.**: this example shows the analysis of concepts for adverse events.
+    |image508|
 
-    |image81|
-
-    **Example 3: NGS data.**: this example shows the analysis of concepts for description of planned arm.
+    **Example 3: NGS data.**: this example shows the analysis of the high dim node ‘Genes’, specified for AURKA expression
 
 Significance Tests
 ~~~~~~~~~~~~~~~~~~
@@ -68,7 +68,8 @@ Significance Tests
 The analyses include the results of significance testing that Analyze
 performs:
 
-|image82|
+|image509|
+|image510|
 
 Significance testing is designed to indicate whether the reliability of
 the statistics is 95% or greater, based on p-value.
@@ -79,8 +80,8 @@ chi-squared statistics to determine the p-value:
 -   For continuous variables (for example, subject weight or age), a
     t-test compares the observed values in the two subsets.
     
--   For categorical values (for example, diagnoses), a chi-squared test
-    compares the counts in the two subsets.
+-   For categorical values (for example, diagnoses), a chi-squared test compares the counts in 
+    the two subsets. 
 
     See `this <https://commons.apache.org/proper/commons-math/javadocs/api-2.2/org/apache/commons/math/stat/inference/TestUtils.html>`__ 
     for the Java methods that calculate the chi-squared and t-test statistic.
@@ -101,7 +102,7 @@ circumstances:
     show statistics by gender, tables similar to the following would
     result:
 
-    |image83|
+    |image511|
 
     In this case, the chi-squared function doesn’t return meaningful
     results.
@@ -112,22 +113,22 @@ View Subset Breakdown by Concept
 
 Generating summary statistics provides data for all subsets defined by
 study cohorts. You can view data for a particular subset, however, as
-follows:
+following:
 
 #.  Select a cohort from the navigation tree and drag it into a subset; for example:
 
-    |image84|
+    |image513|
 
 #.  Click the **Summary Statistics** tab.
 
 #.  Drag and drop a folder from the navigation tree into the empty page;
     for example:
 
-    |image85|
+    |image514|
 
 #.  tranSMART calculates the results and displays the data for the given subset and concept:
 
-    |image86|
+    |image515|
 
 .. note::
     The Summary Statistics allows you to use high dimensional data as well, see :ref:`hidome-label`.
@@ -158,29 +159,27 @@ comparison.
 Results of a Comparison
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-In a comparison of subjects in a psychological study, suppose Subset 1
-contains subjects with a substance abuse problem and Subset 2 contains
-subjects with no substance abuse assessment.
+For example. In a comparison of subjects in an oncology study, suppose Subset 1 contains 
+subjects with a so-called MSS tumor characteristic and Subset 2 contains subjects with a so-called
+MSI tumor characteristics.
 
-After the subsets are defined and summary statistics are generated, a
-diagnosis of depression is dropped into the Summary Statistics view as a
-point of comparison. tranSMART displays a side-by-side comparison of the
-subjects in each subset, indicating that almost all the subjects with a
-substance abuse problem have been diagnosed with depression, while that
-diagnosis for those with no substance abuse problem is more evenly
-split.
+|image525|
 
-The comparison is placed at the top of the Summary Statistics view,
-above the demographic definitions plus any other earlier comparisons:
+After the subsets are defined and summary statistics are generated, an analysis of 
+‘Hypermutation’ is dropped into the Summary Statistics view as a point of comparison. As you 
+can see, subset 2 (MSI characterized tumors) show a much higher portion of Hypermutated 
+tumors, indication a connection between hypermutation and MSI status. Statistical testing claims 
+that the results are significant. 
 
-|image87|
+|image526|
 
 .. note::
-    To keep the size of the preceding figure within production limits, 
-    the demographics (age, sex, and race) portions of the figure are excluded.
+    when statistical analysis claims the p-value to be 0.0, it indicates the p-value to be very 
+    small (<0.01)
 
 .. note::
-    Query details accessed through the **Summary** button do not reflect points of comparison.
+    To keep the size of the preceding figure within production limits, the demographics 
+	(age and gender) portions of the figure are excluded in this screenshot. 
 
     
 Printing the Contents of Summary Statistics View
@@ -190,7 +189,7 @@ You can print the contents of Summary Statistics view as shown below.
 
 #.  In Summary Statistics view, click the **Print** button:
 
-    |image90|
+    |image518|
 
     The entire contents of Summary Statistics view appear in a separate browser window.
 
@@ -201,9 +200,8 @@ You can print the contents of Summary Statistics view as shown below.
 Viewing Data in Grid View
 -------------------------
 
-If you are displaying data in the various tables and charts of
-Summary Statistics view, and want to view the data in a single table,
-use the **Grid View** option.
+If you are displaying data in the various tables and charts of Summary Statistics view, and want 
+to view the data in a single table, use the **Grid View** option.
 
 Access Grid View as follows:
 
@@ -246,6 +244,59 @@ Grid View Display Options
 If a column name does not appear in the menu, you have not included the
 associated concept in the analysis. For example, Diagnosis has not been
 included in the analysis above.
+
+Visualize High Dimensional data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Viewing genetic profiling data can be done similarly to described above: find your folder of interest and 
+drag it into summary statistics. A pop-up screen will appear in which you can define your search: the 
+type of gene symbol you are looking for and the numbers you want to display (log intensity / raw 
+intensity / z-scores). 
+
+.. note::
+	The Z-score is the signed fractional number of standard deviations by which the value of an 
+	observation or data point is above the mean value of what is being observed or measured. Observed 
+	values above the mean have positive standard scores, while values below the mean have negative 
+	standard scores. In tranSMART Z-scores are calculated during upload using this formula: z = X - μ / σ 
+	-- > Z score = value - Average(mean) / Standard deviation
+
+For example, drag ‘Genes’ from the RNA expression/Microarray: Agilent 244k mRNA folder to the Summary Statistics screen:
+
+	|image519|
+
+Next, the following pop-up screen will appear in which you can search for a specific gene (in here: 
+AURKA) and what you want to query on (in here: Log Intensity). Next, click ‘OK’. 
+
+	|image520|
+
+After previous actions, the following screen will pop-up. Please note that two subsets are being 
+compared. The Log Intensity is being displayed in a Histogram and a Boxplot. 
+
+	|image521|
+
+Visualize High Dimensional data in Grid View
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Similar to the functionality described above,  to visualize genetic data in table format drag the node of 
+interest to grid view. Next, define your search (which gene and which type of data, e.g. raw intensity) 
+and your values will appear. 
+
+For example, just as in Summary Statistics, drag the ‘Genes’ node from the RNA expression/Microarray: 
+Agilent 244k mRNA folder into the Grid view screen. 
+
+	|image522|
+
+Next, define your query by selecting a search term (in here: KRAS) and what you want to Query on (in here: Raw Intensity)
+
+	|image523|
+
+Next, a new row will be added to the grid view screen (see the red arrow). In here the Raw Intensity 
+values are being displayed for each patient. 
+
+	|image524|
+
+
+
 
 .. |image76| image:: media/image63.png
    :width: 6.00000in
@@ -298,3 +349,69 @@ included in the analysis above.
 .. |image95| image:: media/image79.png
    :width: 3.17669in
    :height: 3.46832in
+.. |image500| image:: media/image500.png
+   :width: 8.307in
+   :height: 5.28in
+.. |image501| image:: media/image501.png
+   :width: 8.307in
+   :height: 0.88in
+.. |image502| image:: media/image502.png
+   :width: 2.4in
+   :height: 1.05in
+.. |image503| image:: media/image503.png
+   :width: 8.307in
+   :height: 3.07in
+.. |image505| image:: media/image505.png
+   :width: 8.307in
+   :height: 4.333in
+ .. |image506| image:: media/image506.png
+   :width: 8.253in
+   :height: 3.053in
+.. |image508| image:: media/image508.png
+   :width: 8.32in
+   :height: 3.373in
+.. |image509| image:: media/image509.png
+   :width: 4.68in
+   :height: 0.52in
+.. |image510| image:: media/image510.png
+   :width: 4.413in
+   :height: 0.44in
+.. |image511| image:: media/image511.png
+   :width: 2.84in
+   :height: 0.2666in   
+.. |image513| image:: media/image513.png
+   :width: 8.28in
+   :height: 4.586in  
+.. |image514| image:: media/image514.png
+   :width: 8.32in
+   :height: 4.33in  
+.. |image515| image:: media/image515.png
+   :width: 8.306in
+   :height: 3.867in  
+.. |image518| image:: media/image518.png
+   :width: 8.32in
+   :height: 1.253in  
+.. |image519| image:: media/image519.png
+   :width: 8.307in
+   :height: 4.12in  
+.. |image520| image:: media/image520.png
+   :width: 5.707in
+   :height: 3.453in  
+.. |image521| image:: media/image521.png
+   :width: 8.307in
+   :height: 3.467in  
+.. |image522| image:: media/image522.png
+   :width: 8.307in
+   :height: 6.08in  
+.. |image523| image:: media/image523.png
+   :width: 5.453in
+   :height: 2.613in  
+.. |image524| image:: media/image524.png
+   :width: 8.307in
+   :height: 4.733in  
+.. |image525| image:: media/image525.png
+   :width: 8.33in
+   :height: 3.88in  
+.. |image526| image:: media/image526.png
+   :width: 8.3467in
+   :height: 2.853in  
